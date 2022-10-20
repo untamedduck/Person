@@ -1,0 +1,36 @@
+
+/**
+ * 
+ * @author Dilshad
+ *
+ */
+
+public class PersonNodeDriver {
+
+	public static void main(String[] args) {
+
+		System.out.println("Hello to Singly Linked List ");
+		// create the first Person node. The head node
+		Person first = new Person("Bob");
+		// We must keep the reference to the first node
+		// otherwise the whole linked list is lost
+
+		// Create the second node and connect it to the first one
+		Person second = new Person("Tom");
+		first.setNextP(second);
+		// Create the third node and connect it to the second one
+		Person third = new Person("Frank");
+		second.setNextP(third);
+		// Create a reference variable personRef of type PersonNode set it equal to the
+		// head
+		// Loop and print all of them
+		Person personRef = first;
+
+		while (personRef != null) {
+			System.out.println(personRef.getPdata());
+			personRef = personRef.getNextP();
+		}
+
+	}
+
+}
