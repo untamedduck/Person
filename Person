@@ -1,0 +1,68 @@
+public class Person {
+
+	private String pData;
+	private Person nextP;
+
+	/**
+	 * No Argument or default constructor
+	 */
+	public Person() {
+		this.pData = null;
+		this.nextP = null;
+
+	}
+
+	/**
+	 * @param pData
+	 * @param prevP
+	 */
+	public Person(String pData, Person prevP) {
+		this.pData = pData;
+		prevP.nextP = this;
+
+	}
+
+	/**
+	 * 
+	 * @param pData
+	 */
+	public Person(String pData) {
+
+		this.pData = pData;
+		this.nextP = null;
+	}
+
+	/**
+	 * @return the p
+	 */
+	public Person getNextP() {
+		return nextP;
+
+	}
+
+	/**
+	 * @param p the p to set
+	 */
+	public void setNextP(Person n) {
+		this.nextP = n;
+	}
+
+	public String getPdata() {
+		return this.pData;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Person [name=");
+		builder.append(pData);
+		builder.append("]");
+		return builder.toString();
+	}
+
+}
